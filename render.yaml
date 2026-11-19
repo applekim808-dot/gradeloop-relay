@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: gradeloop-relay
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: VENDOR_BASE_URL
+        value: https://apihub.agnes-ai.com/v1
+      - key: RELAY_TOKEN
+        sync: false
